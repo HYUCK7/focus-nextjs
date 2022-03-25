@@ -1,3 +1,5 @@
+import React, {useState} from "react";
+
 export default function Calc(){
     const[inputs, setInputs] = useState({})
     const[result, setResult] = useState('')
@@ -16,7 +18,7 @@ export default function Calc(){
         memberCalc({num1, opcode, num2}).then(res=> setResult(res.data)).catch(err=>console.log(`에러 발생 : ${err}`))
     }
     return<>
-    <form>
+        <form>
             <h1>CALC</h1>
             <div>
                 <label><b>NUM1</b></label>
@@ -36,5 +38,5 @@ export default function Calc(){
             </div>
         </form>
         <div>계산결과 : {result}</div>
-    </>
+        </>
 }
